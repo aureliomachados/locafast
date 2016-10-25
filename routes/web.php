@@ -20,4 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+//página inicial do cliente
+Route::get('/cliente-panel', function (){
+    return view('cliente-panel');
+});
+
 Route::resource('veiculos', 'VeiculoController');

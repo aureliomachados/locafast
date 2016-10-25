@@ -5,8 +5,6 @@ namespace App;
 class Funcionario extends User
 {
 
-    protected $table = 'funcionarios';
-
     protected $fillable = ['name', 'email', 'password'];
 
     /**

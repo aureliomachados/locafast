@@ -18,6 +18,9 @@ class VeiculoController extends AppBaseController
 
     public function __construct(VeiculoRepository $veiculoRepo)
     {
+        //only gerente and funcionario can acess this resource controller.
+        $this->middleware('role:gerente|funcionario');
+
         $this->veiculoRepository = $veiculoRepo;
     }
 

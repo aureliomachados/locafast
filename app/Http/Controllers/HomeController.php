@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::user()->hasRole('gerente') || Auth::user()->hasRole('funcionario')){
+            return view('home');
+        }
+        else if(Auth::user()->hasRole('cliente')){
+            return redirect('/cliente-panel');
+        }
     }
 }
