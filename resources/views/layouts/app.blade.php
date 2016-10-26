@@ -25,7 +25,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>LocaFast</b>
             </a>
 
             <!-- Header Navbar -->
@@ -108,7 +108,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    InfyOm Generator
+                    LocaFast
                 </a>
             </div>
 
@@ -122,7 +122,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     <li><a href="{!! url('/login') !!}">Login</a></li>
-                    <li><a href="{!! url('/register') !!}">Register</a></li>
+                    <!--<li><a href="{!! url('/register') !!}">Register</a></li>-->
                 </ul>
             </div>
         </div>
