@@ -14,7 +14,7 @@ class AddDisponivelColumnToVeiculoTable extends Migration
     public function up()
     {
         Schema::table('veiculos', function (Blueprint $table) {
-            $table->boolean('disponivel');
+            $table->boolean('disponivel')->nullable();
         });
     }
 
