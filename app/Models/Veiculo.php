@@ -50,8 +50,8 @@ class Veiculo extends Model
      */
     public static $rules = [
         'modelo' => 'required',
-        'placa' => 'required',
-        'chassi' => 'required',
+        'placa' => 'required|unique:veiculos',
+        'chassi' => 'required|unique:veiculos',
         'cor' => 'required',
         'ano' => 'required'
     ];
