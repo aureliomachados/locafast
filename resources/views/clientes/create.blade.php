@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Cadastrar novo veículo')
+@section('title', 'Cadastrar novo cliente')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Cadastrar novo veículo
+            Cadastrar novo cliente
         </h1>
     </section>
     <div class="content">
@@ -14,9 +14,9 @@
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'veiculos.store']) !!}
+                    {!! Form::open(['route' => 'clientes.store']) !!}
 
-                        @include('veiculos.fields')
+                        @include('clientes.fields')
 
                     {!! Form::close() !!}
                 </div>

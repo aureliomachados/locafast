@@ -3,10 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Veiculo;
-use Illuminate\Http\Request;
+use App\Models\Cliente;
 
-class UpdateVeiculoRequest extends FormRequest
+class CreateClienteRequest extends FormRequest
 {
 
     /**
@@ -24,15 +23,8 @@ class UpdateVeiculoRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(Request $request)
+    public function rules()
     {
-        $id = $request->get('id');
-
-        $rules = Veiculo::$rules;
-
-        $rules['placa'] = 'required|unique:veiculos,id,' . $id;
-        $rules['chassi'] = 'required|unique:veiculos,id,' . $id;
-
-        return $rules;
+        return Cliente::$rules;
     }
 }

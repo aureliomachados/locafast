@@ -36,19 +36,13 @@
 
 <!-- Observacao Field -->
 <div class="form-group">
-    {!! Form::label('observacao', 'Observacao:') !!}
+    {!! Form::label('disponivel', 'Disponível:') !!}
+    <p>{!! ($veiculo->disponivel == 1) ? "Sim" : "Não" !!}</p>
+</div>
+
+<!-- Observacao Field -->
+<div class="form-group">
+    {!! Form::label('observacao', 'Observação:') !!}
     <p>{!! $veiculo->observacao !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $veiculo->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $veiculo->updated_at !!}</p>
 </div>
 

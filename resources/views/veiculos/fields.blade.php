@@ -28,14 +28,19 @@
     {!! Form::text('ano', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Observacao Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('observacao', 'Observacao:') !!}
-    {!! Form::textarea('observacao', null, ['class' => 'form-control']) !!}
+<!-- Disponivel Field -->
+<div class="fom-group col-sm-6">
+    {!! Form::label('disponivel', 'Disponível') !!}
+    {!! Form::select('disponivel', ['Não', 'Sim'], null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Observacao Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('observacao', 'Observação:') !!}
+    {!! Form::textarea('observacao', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('veiculos.index') !!}" class="btn btn-default">Cancel</a>
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('veiculos.index') !!}" class="btn btn-default">Cancelar</a>
 </div>

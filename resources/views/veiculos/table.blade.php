@@ -5,8 +5,8 @@
         <th>Chassi</th>
         <th>Cor</th>
         <th>Ano</th>
-        <th>Observacao</th>
-        <th colspan="3">Action</th>
+        <th>Disponível</th>
+        <th colspan="3">Ação</th>
     </thead>
     <tbody>
     @foreach($veiculos as $veiculo)
@@ -16,7 +16,7 @@
             <td>{!! $veiculo->chassi !!}</td>
             <td>{!! $veiculo->cor !!}</td>
             <td>{!! $veiculo->ano !!}</td>
-            <td>{!! $veiculo->observacao !!}</td>
+            <td>{!! ($veiculo->disponivel == 1) ? "Sim" : "Não" !!}</td>
             <td>
                 {!! Form::open(['route' => ['veiculos.destroy', $veiculo->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

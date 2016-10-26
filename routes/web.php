@@ -26,3 +26,5 @@ Route::get('/cliente-panel', function (){
 });
 
 Route::resource('veiculos', 'VeiculoController');
+
+Route::resource('clientes', 'ClienteController');

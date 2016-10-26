@@ -3,10 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Veiculo;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
-class UpdateVeiculoRequest extends FormRequest
+class UpdateClienteRequest extends FormRequest
 {
 
     /**
@@ -28,10 +28,11 @@ class UpdateVeiculoRequest extends FormRequest
     {
         $id = $request->get('id');
 
-        $rules = Veiculo::$rules;
+        $rules = Cliente::$rules;
 
-        $rules['placa'] = 'required|unique:veiculos,id,' . $id;
-        $rules['chassi'] = 'required|unique:veiculos,id,' . $id;
+        $rules['cpf'] = 'required|unique:clientes,id,' . $id;
+        $rules['rg'] = 'required|unique:clientes,id,' . $id;
+        $rules['cnh'] = 'required|unique:clientes,id,' . $id;
 
         return $rules;
     }

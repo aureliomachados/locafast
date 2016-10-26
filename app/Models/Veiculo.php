@@ -26,7 +26,8 @@ class Veiculo extends Model
         'chassi',
         'cor',
         'ano',
-        'observacao'
+        'observacao',
+        'disponivel'
     ];
 
     /**
@@ -40,7 +41,8 @@ class Veiculo extends Model
         'chassi' => 'string',
         'cor' => 'string',
         'ano' => 'string',
-        'observacao' => 'string'
+        'observacao' => 'string',
+        'disponivel' => 'boolean'
     ];
 
     /**
@@ -53,7 +55,8 @@ class Veiculo extends Model
         'placa' => 'required|unique:veiculos',
         'chassi' => 'required|unique:veiculos',
         'cor' => 'required',
-        'ano' => 'required'
+        'ano' => 'required',
+        'disponivel' => 'required'
     ];
 
     

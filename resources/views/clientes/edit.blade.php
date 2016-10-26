@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Editar veículo')
+@section('title', 'Editar cliente')
 
 @section('content')
     <section class="content-header">
         <h1>
-            Veiculo
+            Editar cliente
         </h1>
    </section>
    <div class="content">
@@ -13,9 +13,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($veiculo, ['route' => ['veiculos.update', $veiculo->id], 'method' => 'patch']) !!}
+                   {!! Form::model($cliente, ['route' => ['clientes.update', $cliente->id], 'method' => 'patch']) !!}
 
-                        @include('veiculos.fields')
+                        @include('clientes.fields')
 
                    {!! Form::close() !!}
                </div>
