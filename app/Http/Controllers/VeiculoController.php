@@ -32,8 +32,15 @@ class VeiculoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->veiculoRepository->pushCriteria(new RequestCriteria($request));
-        $veiculos = $this->veiculoRepository->all();
+        $veiculos = null;
+
+        if($request->has('placa')){
+            $veiculos = $this->veiculoRepository->findByField('placa', $request->get('placa'));
+        }
+        else{
+            $this->veiculoRepository->pushCriteria(new RequestCriteria($request));
+            $veiculos = $this->veiculoRepository->paginate(10);
+        }
 
         return view('veiculos.index')
             ->with('veiculos', $veiculos);

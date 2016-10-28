@@ -7,7 +7,7 @@
 <!-- Telefone Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('telefone', 'Telefone:') !!}
-    {!! Form::number('telefone', null, ['class' => 'form-control']) !!}
+    {!! Form::number('telefone', null, ['class' => 'form-control', 'minlenght']) !!}
 </div>
 
 <!-- Cpf Field -->

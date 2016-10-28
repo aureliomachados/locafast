@@ -30,8 +30,16 @@ class ClienteController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->clienteRepository->pushCriteria(new RequestCriteria($request));
-        $clientes = $this->clienteRepository->all();
+        $clientes = null;
+
+        if($request->has('cpf')){
+            $clientes = $this->clienteRepository->findByField('cpf', $request->get('cpf'));
+        }
+        else{
+            $this->clienteRepository->pushCriteria(new RequestCriteria($request));
+
+            $clientes = $this->clienteRepository->paginate(10);
+        }
 
         return view('clientes.index')
             ->with('clientes', $clientes);
