@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitacao extends Model
 {
-    protected $fillable = ['data_locacao', 'data_devolucao', 'observacoes', 'valor', 'status', 'id_cliente', 'id_veiculo'];
+    protected $fillable = ['data_locacao', 'data_devolucao', 'observacoes', 'valor', 'status', 'cliente_id', 'veiculo_id'];
 
     public function veiculo()
     {

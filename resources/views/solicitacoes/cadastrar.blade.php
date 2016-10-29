@@ -14,7 +14,9 @@
         <div class="clearfix"></div>
 
         @include('flash::message')
-
+            @foreach ($errors->all() as $error)
+                <div class="well alert-danger">{{ $error }}</div>
+            @endforeach
         <div class="clearfix"></div>
 
         <div class="box box-primary">
@@ -43,8 +45,8 @@
                         </div>
 
                         <div class="form-group col-sm-6">
-                            <label for="id_veiculo">Veículo</label>
-                            <select class="form-control" name="id_veiculo" id="id_veiculo">
+                            <label for="veiculo_id">Veículo</label>
+                            <select class="form-control" name="veiculo_id" id="veiculo_id">
                                 @foreach($veiculos as $veiculo)
                                     <option value="{{ $veiculo->id }}"> <b>{{ $veiculo->modelo }}</b> - {{ $veiculo->cor }} / {{ $veiculo->ano }}</option>
                                 @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use App\Models\Veiculo;
 use App\Solicitacao;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,6 +32,17 @@ class SolicitacaoController extends Controller
     }
 
     public function store(Requests\SolicitacaoRequest $request){
-        return $request->all();
+
+        $solicitacao = $request->all();
+
+        $solicitacao['status'] = 0;
+        $solicitacao['data_locacao'] = Carbon::createFromFormat('d/m/Y', $solicitacao['data_locacao']);
+        $solicitacao['data_devolucao'] = Carbon::createFromFormat('d/m/Y', $solicitacao['data_devolucao']);
+
+        Solicitacao::create($solicitacao);
+
+        flash()->success('Solicitação cadastrada!');
+
+        return redirect()->route('clientes.show', ['cliente' => $request->get('cliente_id')]);
     }
 }
