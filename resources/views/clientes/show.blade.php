@@ -12,8 +12,17 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('clientes.show_fields')
-                    <a href="{!! route('clientes.index') !!}" class="btn btn-default">Voltar</a>
+                    <div class="col-md-12 col-sm-12">
+                        @include('clientes.detalhes-cliente')
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        @include('clientes.alocacoes')
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        @include('clientes.solicitacoes')
+                    </div>
+                    <a href="{!! route('clientes.index') !!}" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
         </div>

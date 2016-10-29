@@ -28,3 +28,7 @@ Route::get('/cliente-panel', function (){
 Route::resource('veiculos', 'VeiculoController');
 
 Route::resource('clientes', 'ClienteController');
+
+Route::resource('solicitacoes', 'SolicitacaoController');
+
+Route::get('solicitacoes/cliente/{cliente}', 'SolicitacaoController@cadastrar')->name('solicitacoes.cadastrar');

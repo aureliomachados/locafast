@@ -62,5 +62,10 @@ class Cliente extends Model
         'cnh' => 'required|unique:clientes'
     ];
 
+
+    public function solicitacoes()
+    {
+        return $this->hasMany('App\Solicitacao');
+    }
     
 }
