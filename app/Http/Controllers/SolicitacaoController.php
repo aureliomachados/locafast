@@ -14,12 +14,17 @@ class SolicitacaoController extends Controller
 {
     function __construct(){
         //only gerente and funcionario can acess this resource controller.
-        $this->middleware('role:gerente|funcionario');
+        $this->middleware('role:gerente|funcionario', ['only' => ['cadastrar', 'store']]);
+
+        //lista de solicitações cadastradas a serem analisadas "apenas" pelo gerente
+        $this->middleware('role:gerente', ['only' => ['index']]);
     }
 
     public function index()
     {
-        return Solicitacao::all();
+        $solicitacoesPendentes = Solicitacao::where('status', 0)->with(['cliente', 'veiculo'])->get();
+
+        return view('solicitacoes.index')->with('solicitacoesPendentes', $solicitacoesPendentes);
     }
 
     public function cadastrar(Cliente $cliente)
@@ -44,5 +49,10 @@ class SolicitacaoController extends Controller
         flash()->success('Solicitação cadastrada!');
 
         return redirect()->route('clientes.show', ['cliente' => $request->get('cliente_id')]);
+    }
+
+    public function contrato(Solicitacao $solicitacao)
+    {
+        return view('solicitacoes.contrato')->with('solicitacao', $solicitacao);
     }
 }

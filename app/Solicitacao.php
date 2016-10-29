@@ -10,11 +10,11 @@ class Solicitacao extends Model
 
     public function veiculo()
     {
-        return $this->hasOne('App\Veiculo');
+        return $this->belongsTo('App\Models\Veiculo');
     }
 
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        return $this->belongsTo('App\Models\Cliente');
     }
 }

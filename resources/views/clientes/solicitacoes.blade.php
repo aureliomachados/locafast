@@ -24,10 +24,12 @@
                 </thead>
                 <tbody>
                     @foreach($cliente->solicitacoes as $solicitacao)
-                        <td>{{ ($solicitacao->status == 1) ? "Aprovada" : "Em análise" }}</td>
-                        <td>{{ date('d/m/Y', strtotime($solicitacao->data_alocacao)) }}</td>
-                        <td>{{ date('d/m/Y', strtotime($solicitacao->data_devolucao)) }}</td>
-                        <td>{{ $solicitacao->valor }}</td>
+                        <tr>
+                            <td>{{ ($solicitacao->status == 1) ? "Aprovada" : "Em análise" }}</td>
+                            <td>{{ date('d/m/Y', strtotime($solicitacao->data_alocacao)) }}</td>
+                            <td>{{ date('d/m/Y', strtotime($solicitacao->data_devolucao)) }}</td>
+                            <td>{{ $solicitacao->valor }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

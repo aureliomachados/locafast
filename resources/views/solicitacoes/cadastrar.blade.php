@@ -13,10 +13,15 @@
 
         <div class="clearfix"></div>
 
-        @include('flash::message')
-            @foreach ($errors->all() as $error)
-                <div class="well alert-danger">{{ $error }}</div>
-            @endforeach
+            @include('flash::message')
+
+        @if($errors->count() > 0)
+            <div class="well alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }} <br/>
+                @endforeach
+            </div>
+        @endif
         <div class="clearfix"></div>
 
         <div class="box box-primary">

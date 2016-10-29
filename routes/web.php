@@ -32,3 +32,5 @@ Route::resource('clientes', 'ClienteController');
 Route::resource('solicitacoes', 'SolicitacaoController');
 
 Route::get('solicitacoes/cliente/{cliente}', 'SolicitacaoController@cadastrar')->name('solicitacoes.cadastrar');
+
+Route::get('solicitacoes/contrato/{solicitacao}', 'SolicitacaoController@contrato')->name('solicitacoes.contrato');
