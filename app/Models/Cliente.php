@@ -67,5 +67,10 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Solicitacao');
     }
+
+    public function locacoes()
+    {
+        return $this->hasMany('App\Locacao');
+    }
     
 }

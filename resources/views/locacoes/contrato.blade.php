@@ -19,8 +19,8 @@
                     Identidade no (xxx), C.P.F. no (xxx), residente e domiciliado na Rua (xxx), no (xxx), bairro (xxx), Cep (xxx), Cidade (xxx), no Estado (xxx);
                 </p>
                     <p>
-                        LOCATÁRIO: <b> {{ $solicitacao->cliente->nome }}</b>, Carteira de Identidade n° <b>{{ $solicitacao->cliente->rg }}</b>, C.P.F. n° <b>{{ $solicitacao->cliente->cpf }}</b>, portado da CNH de n° <b> {{ $solicitacao->cliente->cnh }} </b>,  residente e
-                        domiciliado no endereço <b> {{ $solicitacao->cliente->endereco }} </b>, Cep <b>{{ $solicitacao->cliente->cep }}</b>, Cidade <b>{{ $solicitacao->cliente->cidade }}</b>, no Estado (xxx).
+                        LOCATÁRIO: <b> {{ $locacao->cliente->nome }}</b>, Carteira de Identidade n° <b>{{ $locacao->cliente->rg }}</b>, C.P.F. n° <b>{{ $locacao->cliente->cpf }}</b>, portado da CNH de n° <b> {{ $locacao->cliente->cnh }} </b>,  residente e
+                        domiciliado no endereço <b> {{ $locacao->cliente->endereco }} </b>, Cep <b>{{ $locacao->cliente->cep }}</b>, Cidade <b>{{ $locacao->cliente->cidade }}</b>, no Estado (xxx).
                     </p>
 
                     <br/>
@@ -28,7 +28,7 @@
                     <p>
                         <h4 class="text-center"><b>DO OBJETO DO CONTRATO</b></h4>
 
-                        Cláusula 1a. O presente contrato tem como OBJETO a locação de 1  do automóvel modelo <b> {{ $solicitacao->veiculo->modelo }} </b>, ano <b> {{ $solicitacao->veiculo->ano }}</b>, cor <b> {{ $solicitacao->veiculo->cor }} </b>, placa <b> {{ $solicitacao->veiculo->placa }} </b>
+                        Cláusula 1a. O presente contrato tem como OBJETO a locação de 1  do automóvel modelo <b> {{ $locacao->veiculo->modelo }} </b>, ano <b> {{ $locacao->veiculo->ano }}</b>, cor <b> {{ $locacao->veiculo->cor }} </b>, placa <b> {{ $locacao->veiculo->placa }} </b>
                         (Descrever detalhadamente o veículo de que está tratando o contrato), de propriedade da LOCADORA.
                     </p>
 
@@ -55,7 +55,7 @@
                     <p>
                         <h4 class="text-center"><b>DO PRAZO</b></h4>
 
-                        Cláusula 4a. A presente locação terá o lapso temporal de validade de (xxx) dias, iniciando no dia <b>{{ date('d/m/Y', strtotime($solicitacao->data_locacao)) }}</b> e terminando no dia <b>{{ date('d/m/Y', strtotime($solicitacao->data_devolucao)) }}</b>, data na qual o
+                        Cláusula 4a. A presente locação terá o lapso temporal de validade de (xxx) dias, iniciando no dia <b>{{ date('d/m/Y', strtotime($locacao->data_locacao)) }}</b> e terminando no dia <b>{{ date('d/m/Y', strtotime($locacao->data_devolucao)) }}</b>, data na qual o
                         automóvel deverá ser devolvido.
 
                         Cláusula 5a. Se o LOCATÁRIO não restituir o automóvel na data estipulada, deverá pagar, enquanto detiver em seu poder, o aluguel que a

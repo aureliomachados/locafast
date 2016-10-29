@@ -59,5 +59,14 @@ class Veiculo extends Model
         'disponivel' => 'required'
     ];
 
+    public function locacoes(){
+        return $this->hasMany('App\Locacao');
+    }
+
+    public function solicitacoes()
+    {
+        return $this->hasMany('App\Solicitacao');
+    }
+
     
 }

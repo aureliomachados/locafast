@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Laracasts\Flash\Flash;
 
 class SolicitacaoController extends Controller
 {
@@ -44,11 +45,38 @@ class SolicitacaoController extends Controller
         $solicitacao['data_locacao'] = Carbon::createFromFormat('d/m/Y', $solicitacao['data_locacao']);
         $solicitacao['data_devolucao'] = Carbon::createFromFormat('d/m/Y', $solicitacao['data_devolucao']);
 
-        Solicitacao::create($solicitacao);
+        $solicitacao = Solicitacao::create($solicitacao);
+
+        $veiculo = $solicitacao->veiculo;
+
+        //torna o veículo temporariamente indisponível
+        $veiculo->disponivel = 0;
+
+        $veiculo->save();
 
         flash()->success('Solicitação cadastrada!');
 
         return redirect()->route('clientes.show', ['cliente' => $request->get('cliente_id')]);
+    }
+
+    //usar este método no cancelamento de LOCAÇÃO
+    public function update($id, Request $request){
+
+        $solicitacao = Solicitacao::find($id);
+
+        //cancela o
+        $solicitacao->update($request->all());
+
+        $veiculo = $solicitacao->veiculo;
+
+        //torna o veiculo disponível novamente
+        $veiculo->disponivel = 1;
+
+        $veiculo->save();
+
+        Flash::warning("Solicitação cancelada");
+
+        return redirect()->route('clientes.index');
     }
 
     public function contrato(Solicitacao $solicitacao)

@@ -155,6 +155,11 @@ class ClienteController extends AppBaseController
             return redirect(route('clientes.index'));
         }
 
+        else if($cliente->solicitacoes->count() > 0 || $cliente->locacoes->count() > 0){
+            Flash::warning('Este cliente está vinculado à solicitações/locações');
+            return redirect(route('clientes.index'));
+        }
+
         $this->clienteRepository->delete($id);
 
         Flash::success('Cliente deleted successfully.');

@@ -1,4 +1,7 @@
 @if(Auth::user()->hasRole('gerente') || Auth::user()->hasRole('funcionario'))
+    <li class="{{ Request::is('locacoes*') ? 'active' : '' }}">
+        <a href="{!! route('locacoes.index') !!}"><i class="fa fa-edit"></i><span>Locações</span></a>
+    </li>
     <li class="{{ Request::is('veiculos*') ? 'active' : '' }}">
             <a href="{!! route('veiculos.index') !!}"><i class="fa fa-edit"></i><span>Veiculos</span></a>
     </li>

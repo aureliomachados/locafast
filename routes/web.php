@@ -34,3 +34,7 @@ Route::resource('solicitacoes', 'SolicitacaoController');
 Route::get('solicitacoes/cliente/{cliente}', 'SolicitacaoController@cadastrar')->name('solicitacoes.cadastrar');
 
 Route::get('solicitacoes/contrato/{solicitacao}', 'SolicitacaoController@contrato')->name('solicitacoes.contrato');
+Route::get('locacoes/contrato/{locacao}', 'LocacaoController@contrato')->name('locacoes.contrato');
+
+Route::resource('locacoes', 'LocacaoController');
+Route::post('locacoes/aprovar/{solicitacao}', 'LocacaoController@aprovar')->name('locacoes.aprovar');

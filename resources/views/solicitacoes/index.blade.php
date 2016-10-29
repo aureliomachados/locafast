@@ -20,22 +20,31 @@
                             <thead>
                             <tr>
                                 <th>Locatário</th>
-                                <th>Status</th>
                                 <th>Data de alocação</th>
                                 <th>Data de devolução</th>
                                 <th>Valor</th>
                                 <th>Contrato</th>
+                                <th colspan="3">Ações</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($solicitacoesPendentes as $solicitacao)
                                 <tr>
                                     <td> {{ $solicitacao->cliente->nome }}</td>
-                                    <td>{{ ($solicitacao->status == 1) ? "Aprovada" : "Em análise" }}</td>
                                     <td>{{ date('d/m/Y', strtotime($solicitacao->data_alocacao)) }}</td>
                                     <td>{{ date('d/m/Y', strtotime($solicitacao->data_devolucao)) }}</td>
                                     <td>{{ $solicitacao->valor }}</td>
                                     <td><a href="{{ route('solicitacoes.contrato', ['solicitacao' => $solicitacao]) }}">Ver contrato</a></td>
+                                    <td>
+                                        <!-- Button trigger modal -->
+                                        <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalAprovar">Aprovar</button>
+                                        @include('solicitacoes.partials.modal-aprovar-solicitacao')
+                                    <td/>
+                                    <td>
+                                        <!-- Button trigger modal -->
+                                        <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalReprovar">Reprovar</button>
+                                        @include('solicitacoes.partials.modal-cancelar-solicitacao')
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
