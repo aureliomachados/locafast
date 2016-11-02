@@ -185,6 +185,9 @@ return [
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+        //provider for dingo api
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+
     ],
 
     /*
