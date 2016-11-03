@@ -26,6 +26,12 @@ class ClienteAPIController extends Controller{
     }
 
     public function store(CreateClienteRequest $request){
-        return Cliente::create($request->all());
+        try{
+            $cliente = Cliente::create($request->all());
+            return $cliente;
+        }
+        catch(\Exception $e){
+            return $e;
+        }
     }
 }
