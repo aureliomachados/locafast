@@ -15,6 +15,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateClienteRequest;
 use App\Models\Cliente;
 use Dingo\Api\Exception\ValidationHttpException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
 
 class ClienteAPIController extends Controller{
     public function index()
@@ -27,12 +29,14 @@ class ClienteAPIController extends Controller{
     }
 
     public function store(CreateClienteRequest $request){
-        try{
-            $cliente = Cliente::create($request->all());
+
+        $cliente = Cliente::create($request->all());
+
+        if($cliente){
             return $cliente;
         }
-        catch(ValidationHttpException $e){
-            return $e->getMessage();
+        else{
+            return response()->json($request['failed']);
         }
     }
 }
