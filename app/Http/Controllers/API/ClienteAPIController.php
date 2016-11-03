@@ -29,14 +29,6 @@ class ClienteAPIController extends Controller{
     }
 
     public function store(CreateClienteRequest $request){
-
-        $cliente = Cliente::create($request->all());
-
-        if($cliente){
-            return $cliente;
-        }
-        else{
-            return response()->json($request['failed']);
-        }
+        return Cliente::create($request->all());
     }
 }
