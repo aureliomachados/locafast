@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 //client base class
 use App\Http\Requests\CreateClienteRequest;
 use App\Models\Cliente;
+use Dingo\Api\Exception\ValidationHttpException;
 
 class ClienteAPIController extends Controller{
     public function index()
@@ -30,7 +31,7 @@ class ClienteAPIController extends Controller{
             $cliente = Cliente::create($request->all());
             return $cliente;
         }
-        catch(\Exception $e){
+        catch(ValidationHttpException $e){
             return $e->getMessage();
         }
     }
