@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Cliente;
 
-class CreateClienteRequest extends FormRequest
+class CreateClienteRequest extends JsonRequest
 {
 
     /**

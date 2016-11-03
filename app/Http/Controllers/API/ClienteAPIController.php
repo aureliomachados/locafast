@@ -31,7 +31,7 @@ class ClienteAPIController extends Controller{
             return $cliente;
         }
         catch(\Exception $e){
-            return $e;
+            return $e->getMessage();
         }
     }
 }
