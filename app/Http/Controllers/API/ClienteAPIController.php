@@ -12,6 +12,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 
 //client base class
+use App\Http\Requests\CreateClienteRequest;
 use App\Models\Cliente;
 
 class ClienteAPIController extends Controller{
@@ -22,5 +23,9 @@ class ClienteAPIController extends Controller{
 
     public function show($id){
         return Cliente::findOrFail($id);
+    }
+
+    public function store(CreateClienteRequest $request){
+        return Cliente::create($request->all());
     }
 }
