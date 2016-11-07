@@ -1,28 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Cadastrar novo cliente')
-
 @section('content')
-    <section class="content-header">
-        <h1>
-            Cadastrar novo cliente
-        </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
+    <form action="" method="post">
+        <select name="estado" id="estado">
 
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'clientes.store']) !!}
+        </select>
+        <br>
 
-                        @include('clientes.fields')
+        <select name="cidade" id="cidade">
 
-                    {!! Form::close() !!}
-                </div>
-            </div>
-        </div>
-    </div>
+        </select>
+    </form>
 @endsection
 
 @section('scripts')
@@ -33,9 +21,7 @@
 
             //lógica para carregar seleção de estados
             var estados = [];
-
-            var selecao = $('#estado_id');
-
+            var selecao = $('#estado');
             $.getJSON(baseApiUrl + 'estados', function (data) {
                 estados = data.estados;
                 $.each(estados, function(i, estado){
@@ -46,23 +32,20 @@
             //logica para carregar seleção de cidades
             $.getJSON(baseApiUrl + 'cidades/estado/1', function(data){
                 $.each(data.cidades, function(i, cidade){
-                    $('#cidade_id').append("<option value='" + cidade.id + "'>" + cidade.nome + "</option>");
+                    $('#cidade').append("<option value='" + cidade.id + "'>" + cidade.nome + "</option>");
                 });
             });
 
             //logica quando muda o estado para carregar a lista de cidades.
-            $('#estado_id').change(function(){
+            $('#estado').change(function(){
                 var cidades = [];
 
-                var selecao = $('#cidade_id');
+                var selecao = $('#cidade');
 
                 //remove todas as opções quando um novo estado for selecionado
                 selecao.empty();
 
-                //valor default
-                selecao.append('<option disabled selected value>Selecione uma cidade</option>');
-
-                $.getJSON(baseApiUrl + 'cidades/estado/' + $('#estado_id').val() , function(data){
+                $.getJSON(baseApiUrl + 'cidades/estado/' + $('#estado').val() , function(data){
                     cidades = data.cidades;
                     $.each(cidades, function (i, cidade) {
                         selecao.append("<option value='" + cidade.id + "'>" + cidade.nome + "</option>");

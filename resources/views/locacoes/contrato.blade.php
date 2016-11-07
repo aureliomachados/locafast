@@ -20,7 +20,7 @@
                 </p>
                     <p>
                         LOCATÁRIO: <b> {{ $locacao->cliente->nome }}</b>, Carteira de Identidade n° <b>{{ $locacao->cliente->rg }}</b>, C.P.F. n° <b>{{ $locacao->cliente->cpf }}</b>, portado da CNH de n° <b> {{ $locacao->cliente->cnh }} </b>,  residente e
-                        domiciliado no endereço <b> {{ $locacao->cliente->endereco }} </b>, Cep <b>{{ $locacao->cliente->cep }}</b>, Cidade <b>{{ $locacao->cliente->cidade }}</b>, no Estado (xxx).
+                        domiciliado no endereço <b> {{ $locacao->cliente->endereco }} </b>, Cep <b>{{ $locacao->cliente->cep }}</b>, Cidade <b>{{ $locacao->cliente->cidade->nome }}</b>, no Estado <b>{{ $locacao->cliente->estado->nome }}</b>.
                     </p>
 
                     <br/>

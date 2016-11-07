@@ -20,7 +20,8 @@
                             <thead>
                             <tr>
                                 <th>Locatário</th>
-                                <th>Data de alocação</th>
+                                <th>Veículo</th>
+                                <th>Data de locação</th>
                                 <th>Data de devolução</th>
                                 <th>Valor</th>
                                 <th>Contrato</th>
@@ -31,7 +32,8 @@
                             @foreach($locacoes->reverse() as $locacao)
                                 <tr>
                                     <td> {{ $locacao->cliente->nome }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($locacao->data_alocacao)) }}</td>
+                                    <td> {{ $locacao->veiculo->modelo }} </td>
+                                    <td>{{ date('d/m/Y', strtotime($locacao->data_locacao)) }}</td>
                                     <td>{{ date('d/m/Y', strtotime($locacao->data_devolucao)) }}</td>
                                     <td>{{ $locacao->valor }}</td>
                                     <td><a href="{{ route('locacoes.contrato', ['locacao' => $locacao]) }}">Ver contrato</a></td>

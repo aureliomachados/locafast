@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
 
     <div class="panel-heading panel-title text-center">
-        Alocações
+        Locações
     </div>
 
     <div class="panel-body">
@@ -10,7 +10,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Alocação</th>
+                        <th>Locação</th>
                         <th>Devolução</th>
                         <th>Valor</th>
                         <th>Status</th>
@@ -18,6 +18,7 @@
                 </thead>
                 <tbody>
                     @foreach($cliente->locacoes->reverse() as $locacao)
+                       <tr>
                         <td>{{ date('d/m/Y', strtotime($locacao->data_locacao)) }}</td>
                         <td>{{ date('d/m/Y', strtotime($locacao->data_devolucao)) }}</td>
                         <td>{{ $locacao->valor }}</td>
@@ -30,6 +31,7 @@
                                 Finalizado
                             @endif
                         </td>
+                       </tr>
                     @endforeach
                 </tbody>
             </table>

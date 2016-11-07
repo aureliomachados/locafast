@@ -22,7 +22,6 @@ class CreateVeiculosTable extends Migration
             $table->string('ano');
             $table->text('observacao');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

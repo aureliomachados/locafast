@@ -13,6 +13,8 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('veiculos.show_fields')
+
+                    @include('veiculos.locacoes')
                     <a href="{!! route('veiculos.index') !!}" class="btn btn-default">Voltar</a>
                 </div>
             </div>

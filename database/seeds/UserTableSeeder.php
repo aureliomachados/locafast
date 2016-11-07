@@ -27,21 +27,6 @@ class UserTableSeeder extends Seeder
         $funcionario->save();
         $funcionario->attachRole($role_funcionario);
 
-        $cliente = new Cliente();
-
-        $cliente->name = "Cliente";
-        $cliente->email = "cliente@cliente.com";
-        $cliente->password = bcrypt("cliente");
-        $cliente->cpf = "979797545";
-        $cliente->rg = "9797974594";
-        $cliente->endereco = "endereço tal";
-        $cliente->cep = "540970458";
-        $cliente->cidade = "Cap City";
-        $cliente->observacoes = "asdfx";
-
-        $cliente->save();
-        $cliente->attachRole($role_cliente);
-
         $gerente = new User();
 
         $gerente->name = 'Gerente';

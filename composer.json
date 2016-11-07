@@ -14,7 +14,8 @@
         "zizaco/entrust": "5.2.x-dev",
         "doctrine/dbal": "^2.5",
         "caouecs/laravel-lang": "~3.0", 
-	"dingo/api": "1.0.*@dev"
+	"dingo/api": "1.0.*@dev", 
+	"orangehill/iseed": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

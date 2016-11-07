@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Cidade;
+use App\Estado;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -12,12 +14,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Cliente extends Model
 {
-    use SoftDeletes;
 
     public $table = 'clientes';
-    
 
-    protected $dates = ['deleted_at'];
+
+//    protected $dates = ['deleted_at'];
 
 
     public $fillable = [
@@ -28,8 +29,9 @@ class Cliente extends Model
         'cnh',
         'endereco',
         'cep',
-        'cidade',
-        'observacoes'
+        'observacoes',
+        'cidade_id',
+        'estado_id'
     ];
 
     /**
@@ -45,7 +47,6 @@ class Cliente extends Model
         'cnh' => 'string',
         'endereco' => 'string',
         'cep' => 'string',
-        'cidade' => 'string',
         'observacoes' => 'string'
     ];
 
@@ -59,7 +60,9 @@ class Cliente extends Model
         'telefone' => 'required',
         'cpf' => 'required|unique:clientes',
         'rg' => 'required|unique:clientes',
-        'cnh' => 'required|unique:clientes'
+        'cnh' => 'required|unique:clientes',
+        'estado_id' => 'required',
+        'cidade_id' => 'required'
     ];
 
 
@@ -71,6 +74,16 @@ class Cliente extends Model
     public function locacoes()
     {
         return $this->hasMany('App\Locacao');
+    }
+
+    public function cidade()
+    {
+        return $this->belongsTo(Cidade::class);
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class);
     }
     
 }

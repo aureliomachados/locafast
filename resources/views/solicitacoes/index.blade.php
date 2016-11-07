@@ -31,7 +31,7 @@
                             @foreach($solicitacoesPendentes as $solicitacao)
                                 <tr>
                                     <td> {{ $solicitacao->cliente->nome }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($solicitacao->data_alocacao)) }}</td>
+                                    <td>{{ date('d/m/Y', strtotime($solicitacao->data_locacao)) }}</td>
                                     <td>{{ date('d/m/Y', strtotime($solicitacao->data_devolucao)) }}</td>
                                     <td>{{ $solicitacao->valor }}</td>
                                     <td><a href="{{ route('solicitacoes.contrato', ['solicitacao' => $solicitacao]) }}">Ver contrato</a></td>

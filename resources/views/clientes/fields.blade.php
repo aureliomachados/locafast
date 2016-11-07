@@ -40,10 +40,18 @@
     {!! Form::text('cep', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Cidade Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('cidade', 'Cidade:') !!}
-    {!! Form::text('cidade', null, ['class' => 'form-control']) !!}
+    <label for="estado_id">Estado:</label>
+    <select name="estado_id" id="estado_id" class="form-control" required>
+
+    </select>
+</div>
+
+<div class="form-group col-sm-6">
+    <label for="cidade_id">Cidade:</label>
+    <select name="cidade_id" id="cidade_id" class="form-control" required>
+        <option disabled selected value>Selecione uma cidade</option>
+    </select>
 </div>
 
 <!-- Observacoes Field -->

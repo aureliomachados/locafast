@@ -12,10 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Veiculo extends Model
 {
-    use SoftDeletes;
 
     public $table = 'veiculos';
-    
 
     protected $dates = ['deleted_at'];
 

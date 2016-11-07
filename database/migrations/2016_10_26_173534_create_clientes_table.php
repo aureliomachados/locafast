@@ -15,6 +15,7 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('nome');
             $table->string('telefone');
             $table->string('cpf');
@@ -22,10 +23,15 @@ class CreateClientesTable extends Migration
             $table->string('cnh');
             $table->string('endereco');
             $table->string('cep');
-            $table->string('cidade');
             $table->text('observacoes');
+
+            $table->integer('estado_id')->unsigned();
+            $table->foreign('estado_id')->references('id')->on('estados');
+
+            $table->integer('cidade_id')->unsigned();
+            $table->foreign('cidade_id')->references('id')->on('cidades');
+
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

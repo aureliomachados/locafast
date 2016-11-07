@@ -35,25 +35,25 @@
 
                         <div class="form-group col-sm-6">
                             <label for="data_locacao">Data de locação:</label>
-                            <input class="form-control" name="data_locacao" type="text" id="data_locacao" placeholder="Ex: 10/10/2010">
+                            <input class="form-control" name="data_locacao" type="text" id="data_locacao" placeholder="Ex: 10/10/2010" required value="{{old('data_locacao')}}">
                         </div>
 
 
                         <div class="form-group col-sm-6">
                             <label for="data_devolucao">Data de devolução:</label>
-                            <input class="form-control" name="data_devolucao" type="text" id="data_devolucao" placeholder="Ex: 10/10/2010">
+                            <input class="form-control" name="data_devolucao" type="text" id="data_devolucao" placeholder="Ex: 10/10/2010" required value="{{old('data_devolucao')}}">
                         </div>
 
                         <div class="form-group col-sm-6">
                             <label for="valor">Valor:</label>
-                            <input class="form-control" name="valor" type="text" id="valor" placeholder="Ex: 29.90">
+                            <input class="form-control" name="valor" type="text" id="valor" placeholder="Ex: 29.90" required value="{{ old('valor') }}">
                         </div>
 
                         <div class="form-group col-sm-6">
                             <label for="veiculo_id">Veículo</label>
-                            <select class="form-control" name="veiculo_id" id="veiculo_id">
+                            <select class="form-control" name="veiculo_id" id="veiculo_id" required>
                                 @foreach($veiculos as $veiculo)
-                                    <option value="{{ $veiculo->id }}"> <b>{{ $veiculo->modelo }}</b> - {{ $veiculo->cor }} / {{ $veiculo->ano }}</option>
+                                    <option value="{{ $veiculo->id }}" {{(Input::old('veiculo_id') == $veiculo->id) ? "selected" : ""}}> <b>{{ $veiculo->modelo }}</b> - {{ $veiculo->cor }} / {{ $veiculo->ano }}</option>
                                 @endforeach
                             </select>
                         </div>

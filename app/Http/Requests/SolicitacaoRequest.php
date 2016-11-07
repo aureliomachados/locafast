@@ -24,8 +24,8 @@ class SolicitacaoRequest extends FormRequest
     public function rules()
     {
         return [
-            'data_locacao' => 'required',
-            'data_devolucao' => 'required',
+            'data_locacao' => 'required|date_format:d/m/Y',
+            'data_devolucao' => 'required|date_format:d/m/Y',
             'cliente_id' => 'required',
             'veiculo_id' => 'required'
         ];

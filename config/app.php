@@ -188,6 +188,8 @@ return [
         //provider for dingo api
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
+        //provider for reverse seed
+        \Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
     /*
@@ -240,6 +242,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Input' => \Illuminate\Support\Facades\Input::class,
 
     ],
 

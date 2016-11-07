@@ -38,3 +38,10 @@ Route::get('locacoes/contrato/{locacao}', 'LocacaoController@contrato')->name('l
 
 Route::resource('locacoes', 'LocacaoController');
 Route::post('locacoes/aprovar/{solicitacao}', 'LocacaoController@aprovar')->name('locacoes.aprovar');
+
+
+//teste para criar form
+
+Route::get('form', function(){
+    return view('form');
+});

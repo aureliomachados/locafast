@@ -36,8 +36,12 @@
                     <td>{{ $cliente->cep }}</td>
                 </tr>
                 <tr>
+                    <th>Estado</th>
+                    <td>{{ $cliente->estado->nome }}</td>
+                </tr>
+                <tr>
                     <th>Cidade</th>
-                    <td>{{ $cliente->cidade }}</td>
+                    <td>{{ $cliente->cidade->nome }}</td>
                 </tr>
             </table>
             <br/>

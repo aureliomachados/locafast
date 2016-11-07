@@ -36,7 +36,6 @@ class ClienteController extends AppBaseController
             $clientes = $this->clienteRepository->findByField('cpf', $request->get('cpf'));
         }
         else{
-            $this->clienteRepository->pushCriteria(new RequestCriteria($request));
 
             $clientes = $this->clienteRepository->paginate(10);
         }
@@ -68,7 +67,7 @@ class ClienteController extends AppBaseController
 
         $cliente = $this->clienteRepository->create($input);
 
-        Flash::success('Cliente saved successfully.');
+        Flash::success('Cliente salvo com sucesso.');
 
         return redirect(route('clientes.index'));
     }
@@ -85,7 +84,7 @@ class ClienteController extends AppBaseController
         $cliente = $this->clienteRepository->findWithoutFail($id);
 
         if (empty($cliente)) {
-            Flash::error('Cliente not found');
+            Flash::error('Cliente não encontrado');
 
             return redirect(route('clientes.index'));
         }
@@ -105,7 +104,7 @@ class ClienteController extends AppBaseController
         $cliente = $this->clienteRepository->findWithoutFail($id);
 
         if (empty($cliente)) {
-            Flash::error('Cliente not found');
+            Flash::error('Cliente não encontrado.');
 
             return redirect(route('clientes.index'));
         }
@@ -126,14 +125,14 @@ class ClienteController extends AppBaseController
         $cliente = $this->clienteRepository->findWithoutFail($id);
 
         if (empty($cliente)) {
-            Flash::error('Cliente not found');
+            Flash::error('Cliente não encontrado');
 
             return redirect(route('clientes.index'));
         }
 
         $cliente = $this->clienteRepository->update($request->all(), $id);
 
-        Flash::success('Cliente updated successfully.');
+        Flash::success('Cliente atualizado com sucesso.');
 
         return redirect(route('clientes.index'));
     }
@@ -150,7 +149,7 @@ class ClienteController extends AppBaseController
         $cliente = $this->clienteRepository->findWithoutFail($id);
 
         if (empty($cliente)) {
-            Flash::error('Cliente not found');
+            Flash::error('Cliente não encontrado');
 
             return redirect(route('clientes.index'));
         }
@@ -162,7 +161,7 @@ class ClienteController extends AppBaseController
 
         $this->clienteRepository->delete($id);
 
-        Flash::success('Cliente deleted successfully.');
+        Flash::success('Cliente removido com sucesso.');
 
         return redirect(route('clientes.index'));
     }
