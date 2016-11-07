@@ -16,4 +16,20 @@ require('laravel-elixir-vue-2');
 elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
+
+    mix.styles([
+        'bootstrap.css',
+        'select2.css',
+        'AdminLTE.css',
+        '_all-skins.css',
+        'ionicons.css'
+    ]);
+
+    mix.scripts([
+        'jquery.js',
+        'bootstrap.js',
+        'select2.js',
+        'icheck.js',
+        'admin-lte-app.js'
+    ]);
 });
