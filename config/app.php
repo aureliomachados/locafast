@@ -179,9 +179,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        if(\Illuminate\Support\Facades\App::environment('local')){
-            Barryvdh\Debugbar\ServiceProvider::class,
-        }
+
+        //Barryvdh\Debugbar\ServiceProvider::class,
+
 
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
