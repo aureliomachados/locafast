@@ -1,37 +1,37 @@
 <!-- Modelo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('modelo', 'Modelo:') !!}
-    {!! Form::text('modelo', null, ['class' => 'form-control']) !!}
+    {!! Form::text('modelo', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Placa Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('placa', 'Placa:') !!}
-    {!! Form::text('placa', null, ['class' => 'form-control']) !!}
+    {!! Form::text('placa', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Chassi Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('chassi', 'Chassi:') !!}
-    {!! Form::text('chassi', null, ['class' => 'form-control']) !!}
+    {!! Form::text('chassi', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Cor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cor', 'Cor:') !!}
-    {!! Form::text('cor', null, ['class' => 'form-control']) !!}
+    {!! Form::text('cor', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Ano Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ano', 'Ano:') !!}
-    {!! Form::text('ano', null, ['class' => 'form-control']) !!}
+    {!! Form::text('ano', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Disponivel Field -->
 <div class="fom-group col-sm-6">
     {!! Form::label('disponivel', 'Disponível') !!}
-    {!! Form::select('disponivel', ['Não', 'Sim'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('disponivel', ['Não', 'Sim'], null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Observacao Field -->
