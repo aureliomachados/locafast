@@ -20,12 +20,12 @@
                     </div>
 
                     <div class="col-md-6 col-sm-6">
-                        @include('clientes.alocacoes')
+                        @include('clientes.locacoes')
                     </div>
 
                     <div class="col-md-12 col-sm-12">
                         @include('clientes.solicitacoes')
-                        <a href="{!! route('clientes.index') !!}" class="btn btn-primary">Voltar</a>
+                        <a href="{!! route('clientes.index') !!}" class="btn btn-default">Voltar</a>
                     </div>
                 </div>
             </div>
