@@ -29,7 +29,7 @@
     <script>
         $(document).ready(function(){
 
-            var baseApiUrl = 'http://localhost:8000/api/'
+            var baseApiUrl = 'https://infinite-basin-18868.herokuapp.com/api/';
 
             //lógica para carregar seleção de estados
             var estados = [];
