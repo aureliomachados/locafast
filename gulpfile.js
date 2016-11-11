@@ -22,7 +22,8 @@ elixir(mix => {
         'select2.css',
         'AdminLTE.css',
         '_all-skins.css',
-        'ionicons.css'
+        'ionicons.css', 
+        'bootstrap-datepicker3.css'
     ]);
 
     mix.scripts([
@@ -30,6 +31,8 @@ elixir(mix => {
         'bootstrap.js',
         'select2.js',
         'icheck.js',
-        'admin-lte-app.js'
+        'admin-lte-app.js', 
+        'bootstrap-datepicker.js', 
+        'bootstrap-datepicker.pt-BR.min.js'
     ]);
 });

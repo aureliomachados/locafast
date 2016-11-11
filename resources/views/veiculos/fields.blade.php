@@ -25,7 +25,7 @@
 <!-- Ano Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ano', 'Ano:') !!}
-    {!! Form::text('ano', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::text('ano', null, ['class' => 'datepicker form-control', 'required']) !!}
 </div>
 
 <!-- Disponivel Field -->

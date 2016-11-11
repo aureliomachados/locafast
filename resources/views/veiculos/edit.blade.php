@@ -23,3 +23,17 @@
        </div>
    </div>
 @endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('.datepicker').datepicker({
+            autoclose: 'true',
+            format: ' yyyy',
+            viewMode: 'years', 
+            minViewMode: 'years',
+            language: "pt-BR"
+        });
+    });
+</script>
+@endsection

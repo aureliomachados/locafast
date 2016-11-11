@@ -7,25 +7,25 @@
 <!-- Telefone Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('telefone', 'Telefone:') !!}
-    {!! Form::number('telefone', null, ['class' => 'form-control', 'minlenght' => '15', 'required']) !!}
+    {!! Form::number('telefone', null, ['class' => 'form-control', 'min' => '0', 'minlenght' => '15', 'required']) !!}
 </div>
 
 <!-- Cpf Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cpf', 'Cpf:') !!}
-    {!! Form::number('cpf', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::number('cpf', null, ['class' => 'form-control', 'required', 'min' => 0]) !!}
 </div>
 
 <!-- Rg Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('rg', 'Rg:') !!}
-    {!! Form::number('rg', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::number('rg', null, ['class' => 'form-control', 'required', 'min' => 0]) !!}
 </div>
 
 <!-- Cnh Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cnh', 'Cnh:') !!}
-    {!! Form::number('cnh', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::number('cnh', null, ['class' => 'form-control', 'required', 'min' => 0]) !!}
 </div>
 
 <!-- Endereco Field -->

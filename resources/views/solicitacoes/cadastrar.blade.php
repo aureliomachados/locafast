@@ -6,7 +6,7 @@
 
     <section class="content-header">
         <h1>
-            Solicitar alocação
+            Solicitar locação
         </h1>
     </section>
     <div class="content">
@@ -35,13 +35,13 @@
 
                         <div class="form-group col-sm-6">
                             <label for="data_locacao">Data de locação:</label>
-                            <input class="form-control" name="data_locacao" type="text" id="data_locacao" placeholder="Ex: 10/10/2010" required value="{{old('data_locacao')}}">
+                            <input class="datepicker form-control" name="data_locacao" type="text" id="data_locacao" placeholder="Ex: 10/10/2010" required value="{{old('data_locacao')}}">
                         </div>
 
 
                         <div class="form-group col-sm-6">
                             <label for="data_devolucao">Data de devolução:</label>
-                            <input class="form-control" name="data_devolucao" type="text" id="data_devolucao" placeholder="Ex: 10/10/2010" required value="{{old('data_devolucao')}}">
+                            <input class="datepicker form-control" name="data_devolucao" type="text" id="data_devolucao" placeholder="Ex: 10/10/2010" required value="{{old('data_devolucao')}}">
                         </div>
 
                         <div class="form-group col-sm-6">
@@ -69,6 +69,14 @@
             </div>
         </div>
     </div>
+@endsection
 
-
+@section('scripts')
+    <script>
+        $(document).ready(function(){
+            $('.datepicker').datepicker({
+                language: 'pt-BR'
+            });
+        });
+    </script>
 @endsection
