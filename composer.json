@@ -15,7 +15,8 @@
         "doctrine/dbal": "^2.5",
         "caouecs/laravel-lang": "~3.0", 
 	"dingo/api": "1.0.*@dev", 
-	"orangehill/iseed": "dev-master"
+	"orangehill/iseed": "dev-master",
+        "barryvdh/laravel-cors": "^0.8.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

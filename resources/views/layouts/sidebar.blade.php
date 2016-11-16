@@ -13,7 +13,7 @@
                 @if (Auth::guest())
                 <p>LOCAFAST</p>
                 @else
-                    <p>{{ Auth::user()->name}}</p>
+                    <p><a href="{{ route('users.show', ['id' => Auth::user()->id]) }}">{{ Auth::user()->name}}</a></p>
                 @endif
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>

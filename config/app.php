@@ -190,11 +190,16 @@ return [
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
 
+        // enable cors
+        Barryvdh\Cors\ServiceProvider::class,
+
         //provider for dingo api
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
         //provider for reverse seed
         \Orangehill\Iseed\IseedServiceProvider::class,
+
+
     ],
 
     /*

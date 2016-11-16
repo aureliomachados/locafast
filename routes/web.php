@@ -25,6 +25,8 @@ Route::get('/cliente-panel', function (){
     return view('cliente-panel');
 });
 
+Route::resource('users', 'UserController');
+
 Route::resource('veiculos', 'VeiculoController');
 
 Route::resource('clientes', 'ClienteController');
