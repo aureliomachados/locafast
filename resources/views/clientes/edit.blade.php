@@ -28,7 +28,7 @@
     <script>
         $(document).ready(function(){
 
-            var baseApiUrl = 'https://cidades-api.herokuapp.com/api/';
+            var baseApiUrl = 'http://localhost:8000/api/';
 
             //lógica para carregar seleção de estados
             var estados = [];

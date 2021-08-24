@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Locacao;
+use App\Models\Veiculo;
 use App\Solicitacao;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,11 @@ class LocacaoController extends Controller
             $solicitacao->status = 1;
             $solicitacao->save();
 
+            $veiculo = Veiculo::find($locacao->veiculo_id);
+
+            $veiculo->status = 0;
+            $veiculo->save();
+
             Flash::success('Solicitação aprovada!');
 
             return redirect()->route('solicitacoes.index');
@@ -64,15 +70,17 @@ class LocacaoController extends Controller
      */
     protected function verificaDisponibilidadeVeiculo($solicitacao){
 
-        $locacoes = DB::select("select * from locacaos WHERE veiculo_id = {$solicitacao['veiculo_id']} AND ((data_locacao BETWEEN '${solicitacao['data_locacao']}' and '{$solicitacao['data_devolucao']}') OR (data_devolucao BETWEEN '${solicitacao['data_locacao']}' and '{$solicitacao['data_devolucao']}')) ");
+        //$locacoes = DB::select("select * from locacaos WHERE veiculo_id = {$solicitacao['veiculo_id']} AND ((data_locacao BETWEEN '${solicitacao['data_locacao']}' and '{$solicitacao['data_devolucao']}') OR (data_devolucao BETWEEN '${solicitacao['data_locacao']}' and '{$solicitacao['data_devolucao']}')) ");
 
-        if(count($locacoes) > 0){
-            //não está disponível
-            return false;
-        }
-        else{
+        $veiculo = Veiculo::findById($solicitacao['veiculo_id']);
+
+        if($veiculo->disponivel){
             //está disponível
             return true;
+        }
+        else{
+            //não está disponível
+            return false;
         }
     }
 }
